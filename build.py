@@ -59,6 +59,7 @@ if __name__ == "__main__":
             f"-H{source_dir}",
             f"-B{args.build_dir}",
             f"-DCMAKE_STAGING_PREFIX={args.install_dir}",
+            f"-DCMAKE_INSTALL_PREFIX={args.install_prefix}",
         ],
         env=env,
     )
@@ -76,7 +77,6 @@ if __name__ == "__main__":
             "-j",
             args.num_threads,
         ],
-        env=env,
     )
 
     builder.create_package(args)
